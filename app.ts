@@ -1,8 +1,11 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import connectToDatabase from "./sequelize";
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.json());
 app.use(
@@ -11,10 +14,12 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+connectToDatabase();
+
+app.get("/", (req: Request, res: Response) => {
   res.json({ info: "Node.js, Express, and Postgres API" });
 });
 
-app.listen(port, () => {
-  console.log(`Server is up and running on port ${port}.`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is up and running on port ${process.env.PORT}.`);
 });
