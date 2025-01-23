@@ -17,7 +17,7 @@ export const sendMessageService = async (req: Request, res: Response) => {
       messages: [
         {
           role: "user",
-          content: `i have ${message}. don't say anything, just give me meal or drink recipe that can be served with these ingredients. result result must be array, where each recipe is object with entities. and also each recipe must have its category for sorting. salad, drinks, breakfast or lunch.`,
+          content: `i have ${message}. don't say anything, just give me meal or drink recipe that can be served with these ingredients. result must be array, where each recipe is object with entities. and also each recipe must have its category for sorting. salad, drinks, breakfast or lunch. also id and explained serving steps.`,
         },
       ],
     });
