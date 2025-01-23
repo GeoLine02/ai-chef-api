@@ -12,15 +12,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "cohere-ai": "^7.15.4",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
+    "ragged": "^0.8.4",
     "sequelize": "^6.37.5"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.7",
     "nodemon": "^3.1.9",

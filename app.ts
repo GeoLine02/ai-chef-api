@@ -1,8 +1,9 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import connectToDatabase from "./sequelize";
-
+import AIChatRoutes from "./routes/AIChat.routes";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -13,12 +14,11 @@ app.use(
     extended: true,
   })
 );
+app.use(cors());
 
 connectToDatabase();
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({ info: "Node.js, Express, and Postgres API" });
-});
+app.use("/ai-chat", AIChatRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is up and running on port ${process.env.PORT}.`);
