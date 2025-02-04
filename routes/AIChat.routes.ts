@@ -3,6 +3,6 @@ import { sendMessageController } from "../controllers/AIChat.controller";
 
 const router = express.Router();
 
-router.post("/send-message", sendMessageController);
+router.post("/generate-recipes", sendMessageController);
 
 export default router;

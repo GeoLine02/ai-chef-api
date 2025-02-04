@@ -24,7 +24,7 @@ export const sendMessageService = async (req: Request, res: Response) => {
 
     const cohereResponse = response.message;
 
-    return res.status(200).json({ message: cohereResponse });
+    return res.status(200).json(cohereResponse);
   } catch (error) {
     console.log(error);
     return res.status(500).json({
